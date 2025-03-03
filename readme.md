@@ -78,7 +78,7 @@ The following graphs show the comparative analysis results for the different pow
 
 ### System Losses and Efficiency Comparison
 
-![Total System Losses and Efficiency](analysis/system_losses_efficiency.png)
+![Total System Losses and Efficiency](./analysis/system_losses_efficiency.png)
 
 This graph compares the total system losses (in MW) and efficiency (in %) for different feeder configurations:
 - 500Al_22KV Solar Feeder line (7 nos)
@@ -87,13 +87,13 @@ This graph compares the total system losses (in MW) and efficiency (in %) for di
 
 ### Battery System Losses
 
-![Battery System Losses](analysis/battery_losses.png)
+![Battery System Losses](./analysis/battery_losses.png)
 
 This chart shows the battery system losses (in MW) under different load conditions (from 0 to 147 MW).
 
 ### System Losses by Voltage Level
 
-![System Losses by Voltage Level](analysis/system_losses_voltage.png)
+![System Losses by Voltage Level](./analysis/system_losses_voltage.png)
 
 Comparison of total 132kV system losses and feeder system losses for different configurations:
 - 22kV Switchgear in Alamoen
@@ -102,12 +102,12 @@ Comparison of total 132kV system losses and feeder system losses for different c
 
 ### Transformer Losses Comparison
 
-![Transformer Losses](analysis/transformer_losses.png)
+![Transformer Losses](./analysis/transformer_losses.png)
 
 This graph compares transformer losses (in MW) across different load conditions for the three configurations.
 
 ### Power Loss by Feeder Cable Arrangement
 
-![Power Loss by Feeder Cable Arrangement](analysis/feeder_cable_losses.png)
+![Power Loss by Feeder Cable Arrangement](./analysis/feeder_cable_losses.png)
 
 Comparison of power losses between flat type and trefoil type cable arrangements for 22kV and 33kV collection systems.
