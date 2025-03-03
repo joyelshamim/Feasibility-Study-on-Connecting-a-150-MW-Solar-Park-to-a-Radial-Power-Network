@@ -1,0 +1,1247 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg height="1882.0" viewBox="0 0 1060.0 1882.0" width="1060.0" xmlns="http://www.w3.org/2000/svg">
+    <style><![CDATA[
+/* ----------------------------------------------------------------------- */
+/* File: tautologies.css ------------------------------------------------- */
+.sld-out .sld-arrow-in {visibility: hidden}
+.sld-in .sld-arrow-out {visibility: hidden}
+.sld-closed .sld-sw-open {visibility: hidden}
+.sld-open .sld-sw-closed {visibility: hidden}
+.sld-hidden-node {visibility: hidden}
+.sld-top-feeder .sld-label {dominant-baseline: auto}
+.sld-bottom-feeder .sld-label {dominant-baseline: hanging}
+.sld-active-power .sld-label {dominant-baseline: mathematical}
+.sld-reactive-power .sld-label {dominant-baseline: mathematical}
+.sld-current .sld-label {dominant-baseline: mathematical}
+/* ----------------------------------------------------------------------- */
+/* File: topologicalBaseVoltages.css ------------------------------------- */
+.sld-disconnected {--sld-vl-color: #808080}
+.sld-vl300to500-0 {--sld-vl-color: #FF0000}
+.sld-vl300to500-1 {--sld-vl-color: #7F6C00}
+.sld-vl300to500-2 {--sld-vl-color: #F6B2FF}
+.sld-vl300to500-3 {--sld-vl-color: #996700}
+.sld-vl300to500-4 {--sld-vl-color: #FF85EB}
+.sld-vl300to500-5 {--sld-vl-color: #B25B00}
+.sld-vl300to500-6 {--sld-vl-color: #FF59B5}
+.sld-vl300to500-7 {--sld-vl-color: #CC4400}
+.sld-vl300to500-8 {--sld-vl-color: #FF2C67}
+.sld-vl300to500-9 {--sld-vl-color: #E52600}
+.sld-vl180to300-0 {--sld-vl-color: #218B21}
+.sld-vl180to300-1 {--sld-vl-color: #0D4940}
+.sld-vl180to300-2 {--sld-vl-color: #DFDAB9}
+.sld-vl180to300-3 {--sld-vl-color: #105640}
+.sld-vl180to300-4 {--sld-vl-color: #C2CB92}
+.sld-vl180to300-5 {--sld-vl-color: #14643C}
+.sld-vl180to300-6 {--sld-vl-color: #95B66B}
+.sld-vl180to300-7 {--sld-vl-color: #187036}
+.sld-vl180to300-8 {--sld-vl-color: #5FA046}
+.sld-vl180to300-9 {--sld-vl-color: #1C7E2D}
+.sld-vl120to180-0 {--sld-vl-color: #00AFAE}
+.sld-vl120to180-1 {--sld-vl-color: #000D58}
+.sld-vl120to180-2 {--sld-vl-color: #B8E7B2}
+.sld-vl120to180-3 {--sld-vl-color: #002169}
+.sld-vl120to180-4 {--sld-vl-color: #85D993}
+.sld-vl120to180-5 {--sld-vl-color: #003C7B}
+.sld-vl120to180-6 {--sld-vl-color: #59CB8B}
+.sld-vl120to180-7 {--sld-vl-color: #005C8C}
+.sld-vl120to180-8 {--sld-vl-color: #2CBD94}
+.sld-vl120to180-9 {--sld-vl-color: #00839E}
+.sld-vl70to120-0 {--sld-vl-color: #CC5500}
+.sld-vl70to120-1 {--sld-vl-color: #4A6600}
+.sld-vl70to120-2 {--sld-vl-color: #EFB2DD}
+.sld-vl70to120-3 {--sld-vl-color: #6E7A00}
+.sld-vl70to120-4 {--sld-vl-color: #E685AE}
+.sld-vl70to120-5 {--sld-vl-color: #8E8400}
+.sld-vl70to120-6 {--sld-vl-color: #DD596B}
+.sld-vl70to120-7 {--sld-vl-color: #A37B00}
+.sld-vl70to120-8 {--sld-vl-color: #D4432C}
+.sld-vl70to120-9 {--sld-vl-color: #B76B00}
+.sld-vl50to70-0 {--sld-vl-color: #A020EF}
+.sld-vl50to70-1 {--sld-vl-color: #7F0848}
+.sld-vl50to70-2 {--sld-vl-color: #B7DBFE}
+.sld-vl50to70-3 {--sld-vl-color: #960C6D}
+.sld-vl50to70-4 {--sld-vl-color: #8DA6FE}
+.sld-vl50to70-5 {--sld-vl-color: #AD109A}
+.sld-vl50to70-6 {--sld-vl-color: #6F66FB}
+.sld-vl50to70-7 {--sld-vl-color: #BC14C4}
+.sld-vl50to70-8 {--sld-vl-color: #7F42F6}
+.sld-vl50to70-9 {--sld-vl-color: #B11AD9}
+.sld-vl30to50-0 {--sld-vl-color: #FF8290}
+.sld-vl30to50-1 {--sld-vl-color: #7F6F41}
+.sld-vl30to50-2 {--sld-vl-color: #F6D9FF}
+.sld-vl30to50-3 {--sld-vl-color: #99784E}
+.sld-vl30to50-4 {--sld-vl-color: #FFC3FB}
+.sld-vl30to50-5 {--sld-vl-color: #B27D5B}
+.sld-vl30to50-6 {--sld-vl-color: #FFADE3}
+.sld-vl30to50-7 {--sld-vl-color: #CC7E68}
+.sld-vl30to50-8 {--sld-vl-color: #FF97BF}
+.sld-vl30to50-9 {--sld-vl-color: #E57B75}
+.sld-vl0to30-0 {--sld-vl-color: #AAAE27}
+.sld-vl0to30-1 {--sld-vl-color: #195B0F}
+.sld-vl0to30-2 {--sld-vl-color: #EABABE}
+.sld-vl0to30-3 {--sld-vl-color: #2D6C13}
+.sld-vl0to30-4 {--sld-vl-color: #DDA193}
+.sld-vl0to30-5 {--sld-vl-color: #477D17}
+.sld-vl0to30-6 {--sld-vl-color: #CE9A6E}
+.sld-vl0to30-7 {--sld-vl-color: #648D1C}
+.sld-vl0to30-8 {--sld-vl-color: #BEA04A}
+.sld-vl0to30-9 {--sld-vl-color: #869D22}
+/* ----------------------------------------------------------------------- */
+/* File : highlightLineStates.css ---------------------------------------- */
+.sld-wire.sld-feeder-disconnected {stroke: black}
+.sld-wire.sld-feeder-connected-disconnected {stroke-dasharray: 3,3}
+.sld-wire.sld-feeder-disconnected-connected {stroke: black; stroke-dasharray: 3,3}
+.sld-busbar-section.sld-bus-disconnected {stroke-dasharray: 3,3}/* File : components.css ------------------------------------------------- */
+.sld-disconnector.sld-open {stroke-width: 1.5; stroke: var(--sld-vl-color, black); fill: none}
+.sld-disconnector.sld-closed {fill: var(--sld-vl-color, black)}
+.sld-breaker, .sld-load-break-switch {fill: var(--sld-vl-color, blue)}
+.sld-bus-connection {fill: var(--sld-vl-color, black)}
+.sld-cell-shape-flat .sld-bus-connection {visibility: hidden}
+.sld-busbar-section {stroke: var(--sld-vl-color, black); stroke-width: 3; fill: none}
+.sld-wire {stroke: var(--sld-vl-color, #c80000); fill: none}
+.sld-wire.sld-dangling-line {stroke-width: 2px}
+.sld-wire.sld-tie-line {stroke-width: 2px}
+.sld-load {fill: var(--sld-vl-color, blue)}
+.sld-battery {fill: var(--sld-vl-color, blue)}
+.sld-generator {fill: var(--sld-vl-color, blue)}
+.sld-winding {fill: var(--sld-vl-color, blue)}
+.sld-capacitor {fill: var(--sld-vl-color, blue)}
+.sld-inductor {fill: var(--sld-vl-color, blue)}
+.sld-svc {fill: var(--sld-vl-color, blue)}
+.sld-vsc {fill: var(--sld-vl-color, blue)}
+.sld-lcc {fill: var(--sld-vl-color, blue)}
+.sld-ground {stroke: var(--sld-vl-color, blue); fill: none}
+.sld-node-infos {stroke: none; fill: var(--sld-vl-color, black)}
+.sld-node {stroke: none; fill: black}
+.sld-flash {stroke: none; fill: black}
+.sld-lock {stroke: none; fill: black}
+.sld-unknown {stroke: none; fill: black}
+/* Fonts */
+.sld-label {stroke: none; fill: black; font: 8px serif}
+.sld-bus-legend-info {font: 10px serif}
+.sld-graph-label {font: 12px serif}
+/* Specific */
+.sld-grid {stroke: #003700; stroke-dasharray: 1,10}
+.sld-feeder-info.sld-active-power {fill: #37474f}
+.sld-feeder-info.sld-reactive-power {fill: #0277bd}
+.sld-feeder-info.sld-current {fill:#800080}
+.sld-frame {fill: var(--sld-background-color, transparent)}
+/* fictitious switches and busbar */
+.sld-breaker.sld-fictitious {stroke: maroon; stroke-width: 1.5}
+.sld-disconnector.sld-fictitious {stroke: maroon}
+.sld-load-break-switch.sld-fictitious {stroke: maroon}
+.sld-busbar-section.sld-fictitious {stroke: var(--sld-vl-color, #c80000); stroke-width: 1}
+/* ground disconnector specific */
+.sld-ground-disconnection-attach {stroke: var(--sld-vl-color, #c80000); fill: none}
+.sld-open .sld-ground-disconnection-ground {stroke: black; fill: none}
+.sld-closed .sld-ground-disconnection-ground {stroke: var(--sld-vl-color, #c80000); fill: none}
+.sld-open.sld-ground-disconnection {stroke: var(--sld-vl-color, black); fill: none}
+.sld-closed.sld-ground-disconnection {fill: var(--sld-vl-color, black)}
+
+]]></style>
+    <rect class="sld-frame" height="100%" width="100%"/>
+    <g>
+        <g id="LABEL_VL_VL1">
+            <text class="sld-graph-label" x="150.0" y="150.0">Hydro_Generator</text>
+        </g>
+        <g class="sld-busbar-section sld-vl120to180-0" id="idB1" transform="translate(162.5,342.0)">
+            <line x1="0" x2="125.0" y1="0" y2="0"/>
+            <text class="sld-label" id="B1_NW_LABEL" x="-5.0" y="-5.0">Hydro_Bus</text>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-top" id="idEXTERN_32_0">
+            <g class="sld-wire sld-vl120to180-0" id="_95_VL1_95_BUSCO_95_B1_95_G1_95_INTERNAL_95_VL1_95_BUSCO_95_B1_95_G1_45_G1">
+                <polyline points="175.0,342.0,175.0,312.0"/>
+            </g>
+            <g class="sld-wire sld-vl120to180-0" id="_95_VL1_95_INTERNAL_95_VL1_95_BUSCO_95_B1_95_G1_45_G1_95_INTERNAL_95_VL1_95_G1">
+                <polyline points="175.0,312.0,175.0,232.0"/>
+            </g>
+            <g class="sld-wire sld-vl120to180-0" id="_95_VL1_95_INTERNAL_95_VL1_95_G1_95_G1">
+                <polyline points="175.0,232.0,175.0,178.0"/>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-in" id="idG1_ARROW_ACTIVE" transform="translate(170.0,193.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">-100 MW</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-out" id="idG1_ARROW_REACTIVE" transform="translate(170.0,213.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">19 MVAR</text>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idG1_ARROW_CURRENT" transform="translate(170.0,233.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">445</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl120to180-0" id="idBUSCO_95_B1_95_G1" transform="translate(171.0,338.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl120to180-0" id="idINTERNAL_95_VL1_95_BUSCO_95_B1_95_G1_45_G1" transform="translate(171.0,308.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl120to180-0" id="idINTERNAL_95_VL1_95_G1" transform="translate(171.0,228.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-generator sld-top-feeder sld-vl120to180-0" id="idG1" transform="translate(167.0,162.0)">
+                <path d="M0,8 A8,8 0 0 0 16,8 8,8 0 0 0 0,8Z M3.2,10.4 C3.2,8.5 4,5.6 6.3,5.6 C8.6,5.6 8.5,7.5 9.6,7.5 10.7,7.5 10.8,6.4 10.8,5.6 h2 c0,1.9 -0.8,4.8 -3.1,4.8 C 7.4,10.4 7.9,8.5 6.8,8.5 5.6,8.5 5.6,9.6 5.6,10.4z"/>
+                <text class="sld-label" id="G1_N_LABEL" text-anchor="middle" x="0.0" y="-5.0">G1</text>
+            </g>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-bottom" id="idEXTERN_32_1">
+            <g class="sld-wire sld-vl120to180-0" id="_95_VL1_95_BUSCO_95_B1_95_L1_95_H1_95_ONE_95_INTERNAL_95_VL1_95_BUSCO_95_B1_95_L1_95_H1_95_ONE_45_L1_95_H1_95_ONE">
+                <polyline points="225.0,342.0,225.0,372.0"/>
+            </g>
+            <g class="sld-wire sld-vl120to180-0" id="_95_VL1_95_INTERNAL_95_VL1_95_BUSCO_95_B1_95_L1_95_H1_95_ONE_45_L1_95_H1_95_ONE_95_INTERNAL_95_VL1_95_L1_95_H1_95_ONE">
+                <polyline points="225.0,372.0,225.0,452.0"/>
+            </g>
+            <g class="sld-wire sld-vl120to180-0" id="_95_VL1_95_INTERNAL_95_VL1_95_L1_95_H1_95_ONE_95_L1_95_H1_95_ONE">
+                <polyline points="225.0,452.0,225.0,514.0"/>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idL1_95_H1_95_ONE_ARROW_CURRENT" transform="translate(220.0,489.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">222</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-in" id="idL1_95_H1_95_ONE_ARROW_REACTIVE" transform="translate(220.0,469.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">-9 MVAR</text>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-out" id="idL1_95_H1_95_ONE_ARROW_ACTIVE" transform="translate(220.0,449.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">50 MW</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl120to180-0" id="idBUSCO_95_B1_95_L1_95_H1_95_ONE" transform="translate(221.0,338.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl120to180-0" id="idINTERNAL_95_VL1_95_BUSCO_95_B1_95_L1_95_H1_95_ONE_45_L1_95_H1_95_ONE" transform="translate(221.0,368.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl120to180-0" id="idINTERNAL_95_VL1_95_L1_95_H1_95_ONE" transform="translate(221.0,448.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-bottom-feeder" id="idL1_95_H1_95_ONE" transform="translate(225.0,514.0)">
+                <text class="sld-label" id="L1_H1_ONE_S_LABEL" text-anchor="middle" x="0.0" y="5.0">Hydro_Line_1 (10km)</text>
+            </g>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-top" id="idEXTERN_32_2">
+            <g class="sld-wire sld-vl120to180-0" id="_95_VL1_95_BUSCO_95_B1_95_L1_95_H2_95_ONE_95_INTERNAL_95_VL1_95_BUSCO_95_B1_95_L1_95_H2_95_ONE_45_L1_95_H2_95_ONE">
+                <polyline points="275.0,342.0,275.0,312.0"/>
+            </g>
+            <g class="sld-wire sld-vl120to180-0" id="_95_VL1_95_INTERNAL_95_VL1_95_BUSCO_95_B1_95_L1_95_H2_95_ONE_45_L1_95_H2_95_ONE_95_INTERNAL_95_VL1_95_L1_95_H2_95_ONE">
+                <polyline points="275.0,312.0,275.0,232.0"/>
+            </g>
+            <g class="sld-wire sld-vl120to180-0" id="_95_VL1_95_INTERNAL_95_VL1_95_L1_95_H2_95_ONE_95_L1_95_H2_95_ONE">
+                <polyline points="275.0,232.0,275.0,170.0"/>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-out" id="idL1_95_H2_95_ONE_ARROW_ACTIVE" transform="translate(270.0,185.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">50 MW</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-in" id="idL1_95_H2_95_ONE_ARROW_REACTIVE" transform="translate(270.0,205.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">-9 MVAR</text>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idL1_95_H2_95_ONE_ARROW_CURRENT" transform="translate(270.0,225.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">222</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl120to180-0" id="idBUSCO_95_B1_95_L1_95_H2_95_ONE" transform="translate(271.0,338.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl120to180-0" id="idINTERNAL_95_VL1_95_BUSCO_95_B1_95_L1_95_H2_95_ONE_45_L1_95_H2_95_ONE" transform="translate(271.0,308.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl120to180-0" id="idINTERNAL_95_VL1_95_L1_95_H2_95_ONE" transform="translate(271.0,228.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-top-feeder" id="idL1_95_H2_95_ONE" transform="translate(275.0,170.0)">
+                <text class="sld-label" id="L1_H2_ONE_N_LABEL" text-anchor="middle" x="0.0" y="-5.0">Hydro_Line_2 (10km)</text>
+            </g>
+        </g>
+        <g id="LABEL_VL_VL2_33">
+            <text class="sld-graph-label" x="260.0" y="704.0">Solar_Plant_33kV_CB</text>
+        </g>
+        <g class="sld-busbar-section sld-vl30to50-0" id="idB2_95_33" transform="translate(272.5,896.0)">
+            <line x1="0" x2="475.0" y1="0" y2="0"/>
+            <text class="sld-label" id="B2_33_NW_LABEL" x="-5.0" y="-5.0">Solar_CB_Bus</text>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-top" id="idEXTERN_32_0">
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_Feeder_95_1_95_INTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_Feeder_95_1_45_Feeder_95_1">
+                <polyline points="285.0,896.0,285.0,866.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_INTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_Feeder_95_1_45_Feeder_95_1_95_INTERNAL_95_VL2_95_33_95_Feeder_95_1">
+                <polyline points="285.0,866.0,285.0,786.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_INTERNAL_95_VL2_95_33_95_Feeder_95_1_95_Feeder_95_1">
+                <polyline points="285.0,786.0,285.0,732.0"/>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-in" id="idFeeder_95_1_ARROW_ACTIVE" transform="translate(280.0,747.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">-31 MW</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-out" id="idFeeder_95_1_ARROW_REACTIVE" transform="translate(280.0,767.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">1 MVAR</text>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idFeeder_95_1_ARROW_CURRENT" transform="translate(280.0,787.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">543</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl30to50-0" id="idBUSCO_95_B2_95_33_95_Feeder_95_1" transform="translate(281.0,892.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-0" id="idINTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_Feeder_95_1_45_Feeder_95_1" transform="translate(281.0,862.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-0" id="idINTERNAL_95_VL2_95_33_95_Feeder_95_1" transform="translate(281.0,782.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-generator sld-top-feeder sld-vl30to50-0" id="idFeeder_95_1" transform="translate(277.0,716.0)">
+                <path d="M0,8 A8,8 0 0 0 16,8 8,8 0 0 0 0,8Z M3.2,10.4 C3.2,8.5 4,5.6 6.3,5.6 C8.6,5.6 8.5,7.5 9.6,7.5 10.7,7.5 10.8,6.4 10.8,5.6 h2 c0,1.9 -0.8,4.8 -3.1,4.8 C 7.4,10.4 7.9,8.5 6.8,8.5 5.6,8.5 5.6,9.6 5.6,10.4z"/>
+                <text class="sld-label" id="Feeder_1_N_LABEL" text-anchor="middle" x="0.0" y="-5.0">Feeder_1</text>
+            </g>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-bottom" id="idEXTERN_32_1">
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_Feeder_95_2_95_INTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_Feeder_95_2_45_Feeder_95_2">
+                <polyline points="335.0,896.0,335.0,926.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_INTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_Feeder_95_2_45_Feeder_95_2_95_INTERNAL_95_VL2_95_33_95_Feeder_95_2">
+                <polyline points="335.0,926.0,335.0,1006.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_INTERNAL_95_VL2_95_33_95_Feeder_95_2_95_Feeder_95_2">
+                <polyline points="335.0,1006.0,335.0,1060.0"/>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idFeeder_95_2_ARROW_CURRENT" transform="translate(330.0,1035.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">543</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-out" id="idFeeder_95_2_ARROW_REACTIVE" transform="translate(330.0,1015.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">1 MVAR</text>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-in" id="idFeeder_95_2_ARROW_ACTIVE" transform="translate(330.0,995.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">-31 MW</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl30to50-0" id="idBUSCO_95_B2_95_33_95_Feeder_95_2" transform="translate(331.0,892.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-0" id="idINTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_Feeder_95_2_45_Feeder_95_2" transform="translate(331.0,922.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-0" id="idINTERNAL_95_VL2_95_33_95_Feeder_95_2" transform="translate(331.0,1002.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-generator sld-bottom-feeder sld-vl30to50-0" id="idFeeder_95_2" transform="translate(327.0,1060.0)">
+                <path d="M0,8 A8,8 0 0 0 16,8 8,8 0 0 0 0,8Z M3.2,10.4 C3.2,8.5 4,5.6 6.3,5.6 C8.6,5.6 8.5,7.5 9.6,7.5 10.7,7.5 10.8,6.4 10.8,5.6 h2 c0,1.9 -0.8,4.8 -3.1,4.8 C 7.4,10.4 7.9,8.5 6.8,8.5 5.6,8.5 5.6,9.6 5.6,10.4z"/>
+                <text class="sld-label" id="Feeder_2_S_LABEL" text-anchor="middle" x="0.0" y="21.0">Feeder_2</text>
+            </g>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-top" id="idEXTERN_32_2">
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_Feeder_95_3_95_INTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_Feeder_95_3_45_Feeder_95_3">
+                <polyline points="385.0,896.0,385.0,866.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_INTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_Feeder_95_3_45_Feeder_95_3_95_INTERNAL_95_VL2_95_33_95_Feeder_95_3">
+                <polyline points="385.0,866.0,385.0,786.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_INTERNAL_95_VL2_95_33_95_Feeder_95_3_95_Feeder_95_3">
+                <polyline points="385.0,786.0,385.0,732.0"/>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-in" id="idFeeder_95_3_ARROW_ACTIVE" transform="translate(380.0,747.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">-31 MW</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-out" id="idFeeder_95_3_ARROW_REACTIVE" transform="translate(380.0,767.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">1 MVAR</text>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idFeeder_95_3_ARROW_CURRENT" transform="translate(380.0,787.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">543</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl30to50-0" id="idBUSCO_95_B2_95_33_95_Feeder_95_3" transform="translate(381.0,892.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-0" id="idINTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_Feeder_95_3_45_Feeder_95_3" transform="translate(381.0,862.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-0" id="idINTERNAL_95_VL2_95_33_95_Feeder_95_3" transform="translate(381.0,782.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-generator sld-top-feeder sld-vl30to50-0" id="idFeeder_95_3" transform="translate(377.0,716.0)">
+                <path d="M0,8 A8,8 0 0 0 16,8 8,8 0 0 0 0,8Z M3.2,10.4 C3.2,8.5 4,5.6 6.3,5.6 C8.6,5.6 8.5,7.5 9.6,7.5 10.7,7.5 10.8,6.4 10.8,5.6 h2 c0,1.9 -0.8,4.8 -3.1,4.8 C 7.4,10.4 7.9,8.5 6.8,8.5 5.6,8.5 5.6,9.6 5.6,10.4z"/>
+                <text class="sld-label" id="Feeder_3_N_LABEL" text-anchor="middle" x="0.0" y="-5.0">Feeder_3</text>
+            </g>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-bottom" id="idEXTERN_32_3">
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_Feeder_95_4_95_INTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_Feeder_95_4_45_Feeder_95_4">
+                <polyline points="435.0,896.0,435.0,926.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_INTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_Feeder_95_4_45_Feeder_95_4_95_INTERNAL_95_VL2_95_33_95_Feeder_95_4">
+                <polyline points="435.0,926.0,435.0,1006.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_INTERNAL_95_VL2_95_33_95_Feeder_95_4_95_Feeder_95_4">
+                <polyline points="435.0,1006.0,435.0,1060.0"/>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idFeeder_95_4_ARROW_CURRENT" transform="translate(430.0,1035.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">543</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-out" id="idFeeder_95_4_ARROW_REACTIVE" transform="translate(430.0,1015.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">1 MVAR</text>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-in" id="idFeeder_95_4_ARROW_ACTIVE" transform="translate(430.0,995.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">-31 MW</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl30to50-0" id="idBUSCO_95_B2_95_33_95_Feeder_95_4" transform="translate(431.0,892.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-0" id="idINTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_Feeder_95_4_45_Feeder_95_4" transform="translate(431.0,922.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-0" id="idINTERNAL_95_VL2_95_33_95_Feeder_95_4" transform="translate(431.0,1002.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-generator sld-bottom-feeder sld-vl30to50-0" id="idFeeder_95_4" transform="translate(427.0,1060.0)">
+                <path d="M0,8 A8,8 0 0 0 16,8 8,8 0 0 0 0,8Z M3.2,10.4 C3.2,8.5 4,5.6 6.3,5.6 C8.6,5.6 8.5,7.5 9.6,7.5 10.7,7.5 10.8,6.4 10.8,5.6 h2 c0,1.9 -0.8,4.8 -3.1,4.8 C 7.4,10.4 7.9,8.5 6.8,8.5 5.6,8.5 5.6,9.6 5.6,10.4z"/>
+                <text class="sld-label" id="Feeder_4_S_LABEL" text-anchor="middle" x="0.0" y="21.0">Feeder_4</text>
+            </g>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-top" id="idEXTERN_32_4">
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_Feeder_95_5_95_INTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_Feeder_95_5_45_Feeder_95_5">
+                <polyline points="485.0,896.0,485.0,866.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_INTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_Feeder_95_5_45_Feeder_95_5_95_INTERNAL_95_VL2_95_33_95_Feeder_95_5">
+                <polyline points="485.0,866.0,485.0,786.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_INTERNAL_95_VL2_95_33_95_Feeder_95_5_95_Feeder_95_5">
+                <polyline points="485.0,786.0,485.0,732.0"/>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-in" id="idFeeder_95_5_ARROW_ACTIVE" transform="translate(480.0,747.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">-31 MW</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-out" id="idFeeder_95_5_ARROW_REACTIVE" transform="translate(480.0,767.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">1 MVAR</text>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idFeeder_95_5_ARROW_CURRENT" transform="translate(480.0,787.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">543</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl30to50-0" id="idBUSCO_95_B2_95_33_95_Feeder_95_5" transform="translate(481.0,892.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-0" id="idINTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_Feeder_95_5_45_Feeder_95_5" transform="translate(481.0,862.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-0" id="idINTERNAL_95_VL2_95_33_95_Feeder_95_5" transform="translate(481.0,782.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-generator sld-top-feeder sld-vl30to50-0" id="idFeeder_95_5" transform="translate(477.0,716.0)">
+                <path d="M0,8 A8,8 0 0 0 16,8 8,8 0 0 0 0,8Z M3.2,10.4 C3.2,8.5 4,5.6 6.3,5.6 C8.6,5.6 8.5,7.5 9.6,7.5 10.7,7.5 10.8,6.4 10.8,5.6 h2 c0,1.9 -0.8,4.8 -3.1,4.8 C 7.4,10.4 7.9,8.5 6.8,8.5 5.6,8.5 5.6,9.6 5.6,10.4z"/>
+                <text class="sld-label" id="Feeder_5_N_LABEL" text-anchor="middle" x="0.0" y="-5.0">Feeder_5</text>
+            </g>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-bottom" id="idEXTERN_32_5">
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_F1_95_33KV_95_ONE_95_INTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_F1_95_33KV_95_ONE_45_F1_95_33KV_95_ONE">
+                <polyline points="535.0,896.0,535.0,926.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_INTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_F1_95_33KV_95_ONE_45_F1_95_33KV_95_ONE_95_INTERNAL_95_VL2_95_33_95_F1_95_33KV_95_ONE">
+                <polyline points="535.0,926.0,535.0,1006.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_INTERNAL_95_VL2_95_33_95_F1_95_33KV_95_ONE_95_F1_95_33KV_95_ONE">
+                <polyline points="535.0,1006.0,535.0,1068.0"/>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idF1_95_33KV_95_ONE_ARROW_CURRENT" transform="translate(530.0,1043.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">543</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-in" id="idF1_95_33KV_95_ONE_ARROW_REACTIVE" transform="translate(530.0,1023.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">-1 MVAR</text>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-out" id="idF1_95_33KV_95_ONE_ARROW_ACTIVE" transform="translate(530.0,1003.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">31 MW</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl30to50-0" id="idBUSCO_95_B2_95_33_95_F1_95_33KV_95_ONE" transform="translate(531.0,892.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-0" id="idINTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_F1_95_33KV_95_ONE_45_F1_95_33KV_95_ONE" transform="translate(531.0,922.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-0" id="idINTERNAL_95_VL2_95_33_95_F1_95_33KV_95_ONE" transform="translate(531.0,1002.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-bottom-feeder" id="idF1_95_33KV_95_ONE" transform="translate(535.0,1068.0)">
+                <text class="sld-label" id="F1_33KV_ONE_S_LABEL" text-anchor="middle" x="0.0" y="5.0">Solar_Feeder_1_33kV_1.8km</text>
+            </g>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-top" id="idEXTERN_32_6">
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_F2_95_33KV_95_ONE_95_INTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_F2_95_33KV_95_ONE_45_F2_95_33KV_95_ONE">
+                <polyline points="585.0,896.0,585.0,866.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_INTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_F2_95_33KV_95_ONE_45_F2_95_33KV_95_ONE_95_INTERNAL_95_VL2_95_33_95_F2_95_33KV_95_ONE">
+                <polyline points="585.0,866.0,585.0,786.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_INTERNAL_95_VL2_95_33_95_F2_95_33KV_95_ONE_95_F2_95_33KV_95_ONE">
+                <polyline points="585.0,786.0,585.0,724.0"/>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-out" id="idF2_95_33KV_95_ONE_ARROW_ACTIVE" transform="translate(580.0,739.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">31 MW</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-in" id="idF2_95_33KV_95_ONE_ARROW_REACTIVE" transform="translate(580.0,759.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">-1 MVAR</text>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idF2_95_33KV_95_ONE_ARROW_CURRENT" transform="translate(580.0,779.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">543</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl30to50-0" id="idBUSCO_95_B2_95_33_95_F2_95_33KV_95_ONE" transform="translate(581.0,892.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-0" id="idINTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_F2_95_33KV_95_ONE_45_F2_95_33KV_95_ONE" transform="translate(581.0,862.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-0" id="idINTERNAL_95_VL2_95_33_95_F2_95_33KV_95_ONE" transform="translate(581.0,782.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-top-feeder" id="idF2_95_33KV_95_ONE" transform="translate(585.0,724.0)">
+                <text class="sld-label" id="F2_33KV_ONE_N_LABEL" text-anchor="middle" x="0.0" y="-5.0">Solar_Feeder_2_33kV_1.8km</text>
+            </g>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-bottom" id="idEXTERN_32_7">
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_F3_95_33KV_95_ONE_95_INTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_F3_95_33KV_95_ONE_45_F3_95_33KV_95_ONE">
+                <polyline points="635.0,896.0,635.0,926.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_INTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_F3_95_33KV_95_ONE_45_F3_95_33KV_95_ONE_95_INTERNAL_95_VL2_95_33_95_F3_95_33KV_95_ONE">
+                <polyline points="635.0,926.0,635.0,1006.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_INTERNAL_95_VL2_95_33_95_F3_95_33KV_95_ONE_95_F3_95_33KV_95_ONE">
+                <polyline points="635.0,1006.0,635.0,1068.0"/>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idF3_95_33KV_95_ONE_ARROW_CURRENT" transform="translate(630.0,1043.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">543</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-in" id="idF3_95_33KV_95_ONE_ARROW_REACTIVE" transform="translate(630.0,1023.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">-1 MVAR</text>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-out" id="idF3_95_33KV_95_ONE_ARROW_ACTIVE" transform="translate(630.0,1003.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">31 MW</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl30to50-0" id="idBUSCO_95_B2_95_33_95_F3_95_33KV_95_ONE" transform="translate(631.0,892.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-0" id="idINTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_F3_95_33KV_95_ONE_45_F3_95_33KV_95_ONE" transform="translate(631.0,922.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-0" id="idINTERNAL_95_VL2_95_33_95_F3_95_33KV_95_ONE" transform="translate(631.0,1002.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-bottom-feeder" id="idF3_95_33KV_95_ONE" transform="translate(635.0,1068.0)">
+                <text class="sld-label" id="F3_33KV_ONE_S_LABEL" text-anchor="middle" x="0.0" y="5.0">Solar_Feeder_3_33kV_1.8km</text>
+            </g>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-top" id="idEXTERN_32_8">
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_F4_95_33KV_95_ONE_95_INTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_F4_95_33KV_95_ONE_45_F4_95_33KV_95_ONE">
+                <polyline points="685.0,896.0,685.0,866.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_INTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_F4_95_33KV_95_ONE_45_F4_95_33KV_95_ONE_95_INTERNAL_95_VL2_95_33_95_F4_95_33KV_95_ONE">
+                <polyline points="685.0,866.0,685.0,786.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_INTERNAL_95_VL2_95_33_95_F4_95_33KV_95_ONE_95_F4_95_33KV_95_ONE">
+                <polyline points="685.0,786.0,685.0,724.0"/>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-out" id="idF4_95_33KV_95_ONE_ARROW_ACTIVE" transform="translate(680.0,739.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">31 MW</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-in" id="idF4_95_33KV_95_ONE_ARROW_REACTIVE" transform="translate(680.0,759.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">-1 MVAR</text>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idF4_95_33KV_95_ONE_ARROW_CURRENT" transform="translate(680.0,779.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">543</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl30to50-0" id="idBUSCO_95_B2_95_33_95_F4_95_33KV_95_ONE" transform="translate(681.0,892.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-0" id="idINTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_F4_95_33KV_95_ONE_45_F4_95_33KV_95_ONE" transform="translate(681.0,862.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-0" id="idINTERNAL_95_VL2_95_33_95_F4_95_33KV_95_ONE" transform="translate(681.0,782.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-top-feeder" id="idF4_95_33KV_95_ONE" transform="translate(685.0,724.0)">
+                <text class="sld-label" id="F4_33KV_ONE_N_LABEL" text-anchor="middle" x="0.0" y="-5.0">Solar_Feeder_4_33kV_1.8km</text>
+            </g>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-bottom" id="idEXTERN_32_9">
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_F5_95_33KV_95_ONE_95_INTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_F5_95_33KV_95_ONE_45_F5_95_33KV_95_ONE">
+                <polyline points="735.0,896.0,735.0,926.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_INTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_F5_95_33KV_95_ONE_45_F5_95_33KV_95_ONE_95_INTERNAL_95_VL2_95_33_95_F5_95_33KV_95_ONE">
+                <polyline points="735.0,926.0,735.0,1006.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-0" id="_95_VL2_95_33_95_INTERNAL_95_VL2_95_33_95_F5_95_33KV_95_ONE_95_F5_95_33KV_95_ONE">
+                <polyline points="735.0,1006.0,735.0,1068.0"/>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idF5_95_33KV_95_ONE_ARROW_CURRENT" transform="translate(730.0,1043.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">543</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-in" id="idF5_95_33KV_95_ONE_ARROW_REACTIVE" transform="translate(730.0,1023.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">-1 MVAR</text>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-out" id="idF5_95_33KV_95_ONE_ARROW_ACTIVE" transform="translate(730.0,1003.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">31 MW</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl30to50-0" id="idBUSCO_95_B2_95_33_95_F5_95_33KV_95_ONE" transform="translate(731.0,892.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-0" id="idINTERNAL_95_VL2_95_33_95_BUSCO_95_B2_95_33_95_F5_95_33KV_95_ONE_45_F5_95_33KV_95_ONE" transform="translate(731.0,922.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-0" id="idINTERNAL_95_VL2_95_33_95_F5_95_33KV_95_ONE" transform="translate(731.0,1002.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-bottom-feeder" id="idF5_95_33KV_95_ONE" transform="translate(735.0,1068.0)">
+                <text class="sld-label" id="F5_33KV_ONE_S_LABEL" text-anchor="middle" x="0.0" y="5.0">Solar_Feeder_5_33kV_1.8km</text>
+            </g>
+        </g>
+        <g id="LABEL_VL_VL3_132">
+            <text class="sld-graph-label" x="130.0" y="1283.0">Alamoen_132kV</text>
+        </g>
+        <g class="sld-busbar-section sld-vl120to180-1" id="idB3_95_132" transform="translate(142.5,1475.0)">
+            <line x1="0" x2="325.0" y1="0" y2="0"/>
+            <text class="sld-label" id="B3_132_NW_LABEL" x="-5.0" y="-5.0">Alamoen_132kV_Bus</text>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-top" id="idEXTERN_32_0">
+            <g class="sld-wire sld-vl120to180-1" id="_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_G3_95_INTERNAL_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_G3_45_G3">
+                <polyline points="155.0,1475.0,155.0,1445.0"/>
+            </g>
+            <g class="sld-wire sld-vl120to180-1" id="_95_VL3_95_132_95_INTERNAL_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_G3_45_G3_95_INTERNAL_95_VL3_95_132_95_G3">
+                <polyline points="155.0,1445.0,155.0,1365.0"/>
+            </g>
+            <g class="sld-wire sld-vl120to180-1" id="_95_VL3_95_132_95_INTERNAL_95_VL3_95_132_95_G3_95_G3">
+                <polyline points="155.0,1365.0,155.0,1311.0"/>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-in" id="idG3_ARROW_ACTIVE" transform="translate(150.0,1326.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">-103 MW</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-in" id="idG3_ARROW_REACTIVE" transform="translate(150.0,1346.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">-30 MVAR</text>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idG3_ARROW_CURRENT" transform="translate(150.0,1366.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">469</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl120to180-1" id="idBUSCO_95_B3_95_132_95_G3" transform="translate(151.0,1471.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl120to180-1" id="idINTERNAL_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_G3_45_G3" transform="translate(151.0,1441.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl120to180-1" id="idINTERNAL_95_VL3_95_132_95_G3" transform="translate(151.0,1361.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-generator sld-top-feeder sld-vl120to180-1" id="idG3" transform="translate(147.0,1295.0)">
+                <path d="M0,8 A8,8 0 0 0 16,8 8,8 0 0 0 0,8Z M3.2,10.4 C3.2,8.5 4,5.6 6.3,5.6 C8.6,5.6 8.5,7.5 9.6,7.5 10.7,7.5 10.8,6.4 10.8,5.6 h2 c0,1.9 -0.8,4.8 -3.1,4.8 C 7.4,10.4 7.9,8.5 6.8,8.5 5.6,8.5 5.6,9.6 5.6,10.4z"/>
+                <text class="sld-label" id="G3_N_LABEL" text-anchor="middle" x="0.0" y="-5.0">Alamoen PV plant</text>
+            </g>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-bottom" id="idEXTERN_32_1">
+            <g class="sld-wire sld-vl120to180-1" id="_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_L1_95_H1_95_TWO_95_INTERNAL_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_L1_95_H1_95_TWO_45_L1_95_H1_95_TWO">
+                <polyline points="205.0,1475.0,205.0,1505.0"/>
+            </g>
+            <g class="sld-wire sld-vl120to180-1" id="_95_VL3_95_132_95_INTERNAL_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_L1_95_H1_95_TWO_45_L1_95_H1_95_TWO_95_INTERNAL_95_VL3_95_132_95_L1_95_H1_95_TWO">
+                <polyline points="205.0,1505.0,205.0,1585.0"/>
+            </g>
+            <g class="sld-wire sld-vl120to180-1" id="_95_VL3_95_132_95_INTERNAL_95_VL3_95_132_95_L1_95_H1_95_TWO_95_L1_95_H1_95_TWO">
+                <polyline points="205.0,1585.0,205.0,1647.0"/>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idL1_95_H1_95_TWO_ARROW_CURRENT" transform="translate(200.0,1622.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">222</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-out" id="idL1_95_H1_95_TWO_ARROW_REACTIVE" transform="translate(200.0,1602.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">9 MVAR</text>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-in" id="idL1_95_H1_95_TWO_ARROW_ACTIVE" transform="translate(200.0,1582.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">-50 MW</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl120to180-1" id="idBUSCO_95_B3_95_132_95_L1_95_H1_95_TWO" transform="translate(201.0,1471.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl120to180-1" id="idINTERNAL_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_L1_95_H1_95_TWO_45_L1_95_H1_95_TWO" transform="translate(201.0,1501.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl120to180-1" id="idINTERNAL_95_VL3_95_132_95_L1_95_H1_95_TWO" transform="translate(201.0,1581.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-bottom-feeder" id="idL1_95_H1_95_TWO" transform="translate(205.0,1647.0)">
+                <text class="sld-label" id="L1_H1_TWO_S_LABEL" text-anchor="middle" x="0.0" y="5.0">Hydro_Line_1 (10km)</text>
+            </g>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-top" id="idEXTERN_32_2">
+            <g class="sld-wire sld-vl120to180-1" id="_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_L1_95_H2_95_TWO_95_INTERNAL_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_L1_95_H2_95_TWO_45_L1_95_H2_95_TWO">
+                <polyline points="255.0,1475.0,255.0,1445.0"/>
+            </g>
+            <g class="sld-wire sld-vl120to180-1" id="_95_VL3_95_132_95_INTERNAL_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_L1_95_H2_95_TWO_45_L1_95_H2_95_TWO_95_INTERNAL_95_VL3_95_132_95_L1_95_H2_95_TWO">
+                <polyline points="255.0,1445.0,255.0,1365.0"/>
+            </g>
+            <g class="sld-wire sld-vl120to180-1" id="_95_VL3_95_132_95_INTERNAL_95_VL3_95_132_95_L1_95_H2_95_TWO_95_L1_95_H2_95_TWO">
+                <polyline points="255.0,1365.0,255.0,1303.0"/>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-in" id="idL1_95_H2_95_TWO_ARROW_ACTIVE" transform="translate(250.0,1318.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">-50 MW</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-out" id="idL1_95_H2_95_TWO_ARROW_REACTIVE" transform="translate(250.0,1338.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">9 MVAR</text>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idL1_95_H2_95_TWO_ARROW_CURRENT" transform="translate(250.0,1358.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">222</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl120to180-1" id="idBUSCO_95_B3_95_132_95_L1_95_H2_95_TWO" transform="translate(251.0,1471.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl120to180-1" id="idINTERNAL_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_L1_95_H2_95_TWO_45_L1_95_H2_95_TWO" transform="translate(251.0,1441.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl120to180-1" id="idINTERNAL_95_VL3_95_132_95_L1_95_H2_95_TWO" transform="translate(251.0,1361.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-top-feeder" id="idL1_95_H2_95_TWO" transform="translate(255.0,1303.0)">
+                <text class="sld-label" id="L1_H2_TWO_N_LABEL" text-anchor="middle" x="0.0" y="-5.0">Hydro_Line_2 (10km)</text>
+            </g>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-bottom" id="idEXTERN_32_3">
+            <g class="sld-wire sld-vl120to180-1" id="_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_TR1_95_A_95_TWO_95_INTERNAL_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_TR1_95_A_95_TWO_45_TR1_95_A_95_TWO">
+                <polyline points="305.0,1475.0,305.0,1505.0"/>
+            </g>
+            <g class="sld-wire sld-vl120to180-1" id="_95_VL3_95_132_95_INTERNAL_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_TR1_95_A_95_TWO_45_TR1_95_A_95_TWO_95_INTERNAL_95_VL3_95_132_95_TR1_95_A_95_TWO">
+                <polyline points="305.0,1505.0,305.0,1585.0"/>
+            </g>
+            <g class="sld-wire sld-vl120to180-1" id="_95_VL3_95_132_95_INTERNAL_95_VL3_95_132_95_TR1_95_A_95_TWO_95_TR1_95_A_95_TWO">
+                <polyline points="305.0,1585.0,305.0,1647.0"/>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idTR1_95_A_95_TWO_ARROW_CURRENT" transform="translate(300.0,1622.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">339</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-out" id="idTR1_95_A_95_TWO_ARROW_REACTIVE" transform="translate(300.0,1602.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">9 MVAR</text>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-in" id="idTR1_95_A_95_TWO_ARROW_ACTIVE" transform="translate(300.0,1582.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">-77 MW</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl120to180-1" id="idBUSCO_95_B3_95_132_95_TR1_95_A_95_TWO" transform="translate(301.0,1471.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl120to180-1" id="idINTERNAL_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_TR1_95_A_95_TWO_45_TR1_95_A_95_TWO" transform="translate(301.0,1501.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl120to180-1" id="idINTERNAL_95_VL3_95_132_95_TR1_95_A_95_TWO" transform="translate(301.0,1581.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-bottom-feeder sld-vl120to180-1" id="idTR1_95_A_95_TWO" transform="translate(305.0,1647.0)">
+                <text class="sld-label" id="TR1_A_TWO_S_LABEL" text-anchor="middle" x="0.0" y="5.0">Alamoen_Transformer_A</text>
+            </g>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-top" id="idEXTERN_32_4">
+            <g class="sld-wire sld-vl120to180-1" id="_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_TR1_95_B_95_TWO_95_INTERNAL_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_TR1_95_B_95_TWO_45_TR1_95_B_95_TWO">
+                <polyline points="355.0,1475.0,355.0,1445.0"/>
+            </g>
+            <g class="sld-wire sld-vl120to180-1" id="_95_VL3_95_132_95_INTERNAL_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_TR1_95_B_95_TWO_45_TR1_95_B_95_TWO_95_INTERNAL_95_VL3_95_132_95_TR1_95_B_95_TWO">
+                <polyline points="355.0,1445.0,355.0,1365.0"/>
+            </g>
+            <g class="sld-wire sld-vl120to180-1" id="_95_VL3_95_132_95_INTERNAL_95_VL3_95_132_95_TR1_95_B_95_TWO_95_TR1_95_B_95_TWO">
+                <polyline points="355.0,1365.0,355.0,1303.0"/>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-in" id="idTR1_95_B_95_TWO_ARROW_ACTIVE" transform="translate(350.0,1318.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">-77 MW</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-out" id="idTR1_95_B_95_TWO_ARROW_REACTIVE" transform="translate(350.0,1338.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">9 MVAR</text>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idTR1_95_B_95_TWO_ARROW_CURRENT" transform="translate(350.0,1358.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">339</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl120to180-1" id="idBUSCO_95_B3_95_132_95_TR1_95_B_95_TWO" transform="translate(351.0,1471.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl120to180-1" id="idINTERNAL_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_TR1_95_B_95_TWO_45_TR1_95_B_95_TWO" transform="translate(351.0,1441.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl120to180-1" id="idINTERNAL_95_VL3_95_132_95_TR1_95_B_95_TWO" transform="translate(351.0,1361.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-top-feeder sld-vl120to180-1" id="idTR1_95_B_95_TWO" transform="translate(355.0,1303.0)">
+                <text class="sld-label" id="TR1_B_TWO_N_LABEL" text-anchor="middle" x="0.0" y="-5.0">Alamoen_Transformer_B</text>
+            </g>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-bottom" id="idEXTERN_32_5">
+            <g class="sld-wire sld-vl120to180-1" id="_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_L3_95_G1_95_ONE_95_INTERNAL_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_L3_95_G1_95_ONE_45_L3_95_G1_95_ONE">
+                <polyline points="405.0,1475.0,405.0,1505.0"/>
+            </g>
+            <g class="sld-wire sld-vl120to180-1" id="_95_VL3_95_132_95_INTERNAL_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_L3_95_G1_95_ONE_45_L3_95_G1_95_ONE_95_INTERNAL_95_VL3_95_132_95_L3_95_G1_95_ONE">
+                <polyline points="405.0,1505.0,405.0,1585.0"/>
+            </g>
+            <g class="sld-wire sld-vl120to180-1" id="_95_VL3_95_132_95_INTERNAL_95_VL3_95_132_95_L3_95_G1_95_ONE_95_L3_95_G1_95_ONE">
+                <polyline points="405.0,1585.0,405.0,1647.0"/>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idL3_95_G1_95_ONE_ARROW_CURRENT" transform="translate(400.0,1622.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">780</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-in" id="idL3_95_G1_95_ONE_ARROW_REACTIVE" transform="translate(400.0,1602.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">-3 MVAR</text>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-out" id="idL3_95_G1_95_ONE_ARROW_ACTIVE" transform="translate(400.0,1582.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">178 MW</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl120to180-1" id="idBUSCO_95_B3_95_132_95_L3_95_G1_95_ONE" transform="translate(401.0,1471.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl120to180-1" id="idINTERNAL_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_L3_95_G1_95_ONE_45_L3_95_G1_95_ONE" transform="translate(401.0,1501.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl120to180-1" id="idINTERNAL_95_VL3_95_132_95_L3_95_G1_95_ONE" transform="translate(401.0,1581.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-bottom-feeder" id="idL3_95_G1_95_ONE" transform="translate(405.0,1647.0)">
+                <text class="sld-label" id="L3_G1_ONE_S_LABEL" text-anchor="middle" x="0.0" y="5.0">Grid_Line_1 (15km)</text>
+            </g>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-top" id="idEXTERN_32_6">
+            <g class="sld-wire sld-vl120to180-1" id="_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_L3_95_G2_95_ONE_95_INTERNAL_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_L3_95_G2_95_ONE_45_L3_95_G2_95_ONE">
+                <polyline points="455.0,1475.0,455.0,1445.0"/>
+            </g>
+            <g class="sld-wire sld-vl120to180-1" id="_95_VL3_95_132_95_INTERNAL_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_L3_95_G2_95_ONE_45_L3_95_G2_95_ONE_95_INTERNAL_95_VL3_95_132_95_L3_95_G2_95_ONE">
+                <polyline points="455.0,1445.0,455.0,1365.0"/>
+            </g>
+            <g class="sld-wire sld-vl120to180-1" id="_95_VL3_95_132_95_INTERNAL_95_VL3_95_132_95_L3_95_G2_95_ONE_95_L3_95_G2_95_ONE">
+                <polyline points="455.0,1365.0,455.0,1303.0"/>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-out" id="idL3_95_G2_95_ONE_ARROW_ACTIVE" transform="translate(450.0,1318.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">178 MW</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-in" id="idL3_95_G2_95_ONE_ARROW_REACTIVE" transform="translate(450.0,1338.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">-3 MVAR</text>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idL3_95_G2_95_ONE_ARROW_CURRENT" transform="translate(450.0,1358.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">780</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl120to180-1" id="idBUSCO_95_B3_95_132_95_L3_95_G2_95_ONE" transform="translate(451.0,1471.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl120to180-1" id="idINTERNAL_95_VL3_95_132_95_BUSCO_95_B3_95_132_95_L3_95_G2_95_ONE_45_L3_95_G2_95_ONE" transform="translate(451.0,1441.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl120to180-1" id="idINTERNAL_95_VL3_95_132_95_L3_95_G2_95_ONE" transform="translate(451.0,1361.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-top-feeder" id="idL3_95_G2_95_ONE" transform="translate(455.0,1303.0)">
+                <text class="sld-label" id="L3_G2_ONE_N_LABEL" text-anchor="middle" x="0.0" y="-5.0">Grid_Line_2 (15km)</text>
+            </g>
+        </g>
+        <g id="LABEL_VL_VL3_33">
+            <text class="sld-graph-label" x="540.0" y="1283.0">Alamoen_33kV_Switchgear</text>
+        </g>
+        <g class="sld-busbar-section sld-vl30to50-1" id="idB3_95_33" transform="translate(552.5,1475.0)">
+            <line x1="0" x2="325.0" y1="0" y2="0"/>
+            <text class="sld-label" id="B3_33_NW_LABEL" x="-5.0" y="-5.0">Alamoen_33kV_Bus</text>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-top" id="idEXTERN_32_0">
+            <g class="sld-wire sld-vl30to50-1" id="_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_TR1_95_A_95_ONE_95_INTERNAL_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_TR1_95_A_95_ONE_45_TR1_95_A_95_ONE">
+                <polyline points="565.0,1475.0,565.0,1445.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-1" id="_95_VL3_95_33_95_INTERNAL_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_TR1_95_A_95_ONE_45_TR1_95_A_95_ONE_95_INTERNAL_95_VL3_95_33_95_TR1_95_A_95_ONE">
+                <polyline points="565.0,1445.0,565.0,1365.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-1" id="_95_VL3_95_33_95_INTERNAL_95_VL3_95_33_95_TR1_95_A_95_ONE_95_TR1_95_A_95_ONE">
+                <polyline points="565.0,1365.0,565.0,1303.0"/>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-out" id="idTR1_95_A_95_ONE_ARROW_ACTIVE" transform="translate(560.0,1318.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">77 MW</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-in" id="idTR1_95_A_95_ONE_ARROW_REACTIVE" transform="translate(560.0,1338.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">-2 MVAR</text>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idTR1_95_A_95_ONE_ARROW_CURRENT" transform="translate(560.0,1358.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">1,356</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl30to50-1" id="idBUSCO_95_B3_95_33_95_TR1_95_A_95_ONE" transform="translate(561.0,1471.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-1" id="idINTERNAL_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_TR1_95_A_95_ONE_45_TR1_95_A_95_ONE" transform="translate(561.0,1441.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-1" id="idINTERNAL_95_VL3_95_33_95_TR1_95_A_95_ONE" transform="translate(561.0,1361.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-top-feeder sld-vl30to50-1" id="idTR1_95_A_95_ONE" transform="translate(565.0,1303.0)">
+                <text class="sld-label" id="TR1_A_ONE_N_LABEL" text-anchor="middle" x="0.0" y="-5.0">Alamoen_Transformer_A</text>
+            </g>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-bottom" id="idEXTERN_32_1">
+            <g class="sld-wire sld-vl30to50-1" id="_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_TR1_95_B_95_ONE_95_INTERNAL_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_TR1_95_B_95_ONE_45_TR1_95_B_95_ONE">
+                <polyline points="615.0,1475.0,615.0,1505.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-1" id="_95_VL3_95_33_95_INTERNAL_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_TR1_95_B_95_ONE_45_TR1_95_B_95_ONE_95_INTERNAL_95_VL3_95_33_95_TR1_95_B_95_ONE">
+                <polyline points="615.0,1505.0,615.0,1585.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-1" id="_95_VL3_95_33_95_INTERNAL_95_VL3_95_33_95_TR1_95_B_95_ONE_95_TR1_95_B_95_ONE">
+                <polyline points="615.0,1585.0,615.0,1647.0"/>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idTR1_95_B_95_ONE_ARROW_CURRENT" transform="translate(610.0,1622.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">1,356</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-in" id="idTR1_95_B_95_ONE_ARROW_REACTIVE" transform="translate(610.0,1602.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">-2 MVAR</text>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-out" id="idTR1_95_B_95_ONE_ARROW_ACTIVE" transform="translate(610.0,1582.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">77 MW</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl30to50-1" id="idBUSCO_95_B3_95_33_95_TR1_95_B_95_ONE" transform="translate(611.0,1471.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-1" id="idINTERNAL_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_TR1_95_B_95_ONE_45_TR1_95_B_95_ONE" transform="translate(611.0,1501.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-1" id="idINTERNAL_95_VL3_95_33_95_TR1_95_B_95_ONE" transform="translate(611.0,1581.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-bottom-feeder sld-vl30to50-1" id="idTR1_95_B_95_ONE" transform="translate(615.0,1647.0)">
+                <text class="sld-label" id="TR1_B_ONE_S_LABEL" text-anchor="middle" x="0.0" y="5.0">Alamoen_Transformer_B</text>
+            </g>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-top" id="idEXTERN_32_2">
+            <g class="sld-wire sld-vl30to50-1" id="_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_F1_95_33KV_95_TWO_95_INTERNAL_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_F1_95_33KV_95_TWO_45_F1_95_33KV_95_TWO">
+                <polyline points="665.0,1475.0,665.0,1445.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-1" id="_95_VL3_95_33_95_INTERNAL_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_F1_95_33KV_95_TWO_45_F1_95_33KV_95_TWO_95_INTERNAL_95_VL3_95_33_95_F1_95_33KV_95_TWO">
+                <polyline points="665.0,1445.0,665.0,1365.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-1" id="_95_VL3_95_33_95_INTERNAL_95_VL3_95_33_95_F1_95_33KV_95_TWO_95_F1_95_33KV_95_TWO">
+                <polyline points="665.0,1365.0,665.0,1303.0"/>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-in" id="idF1_95_33KV_95_TWO_ARROW_ACTIVE" transform="translate(660.0,1318.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">-31 MW</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-out" id="idF1_95_33KV_95_TWO_ARROW_REACTIVE" transform="translate(660.0,1338.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">1 MVAR</text>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idF1_95_33KV_95_TWO_ARROW_CURRENT" transform="translate(660.0,1358.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">542</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl30to50-1" id="idBUSCO_95_B3_95_33_95_F1_95_33KV_95_TWO" transform="translate(661.0,1471.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-1" id="idINTERNAL_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_F1_95_33KV_95_TWO_45_F1_95_33KV_95_TWO" transform="translate(661.0,1441.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-1" id="idINTERNAL_95_VL3_95_33_95_F1_95_33KV_95_TWO" transform="translate(661.0,1361.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-top-feeder" id="idF1_95_33KV_95_TWO" transform="translate(665.0,1303.0)">
+                <text class="sld-label" id="F1_33KV_TWO_N_LABEL" text-anchor="middle" x="0.0" y="-5.0">Solar_Feeder_1_33kV_1.8km</text>
+            </g>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-bottom" id="idEXTERN_32_3">
+            <g class="sld-wire sld-vl30to50-1" id="_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_F2_95_33KV_95_TWO_95_INTERNAL_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_F2_95_33KV_95_TWO_45_F2_95_33KV_95_TWO">
+                <polyline points="715.0,1475.0,715.0,1505.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-1" id="_95_VL3_95_33_95_INTERNAL_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_F2_95_33KV_95_TWO_45_F2_95_33KV_95_TWO_95_INTERNAL_95_VL3_95_33_95_F2_95_33KV_95_TWO">
+                <polyline points="715.0,1505.0,715.0,1585.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-1" id="_95_VL3_95_33_95_INTERNAL_95_VL3_95_33_95_F2_95_33KV_95_TWO_95_F2_95_33KV_95_TWO">
+                <polyline points="715.0,1585.0,715.0,1647.0"/>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idF2_95_33KV_95_TWO_ARROW_CURRENT" transform="translate(710.0,1622.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">542</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-out" id="idF2_95_33KV_95_TWO_ARROW_REACTIVE" transform="translate(710.0,1602.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">1 MVAR</text>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-in" id="idF2_95_33KV_95_TWO_ARROW_ACTIVE" transform="translate(710.0,1582.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">-31 MW</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl30to50-1" id="idBUSCO_95_B3_95_33_95_F2_95_33KV_95_TWO" transform="translate(711.0,1471.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-1" id="idINTERNAL_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_F2_95_33KV_95_TWO_45_F2_95_33KV_95_TWO" transform="translate(711.0,1501.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-1" id="idINTERNAL_95_VL3_95_33_95_F2_95_33KV_95_TWO" transform="translate(711.0,1581.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-bottom-feeder" id="idF2_95_33KV_95_TWO" transform="translate(715.0,1647.0)">
+                <text class="sld-label" id="F2_33KV_TWO_S_LABEL" text-anchor="middle" x="0.0" y="5.0">Solar_Feeder_2_33kV_1.8km</text>
+            </g>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-top" id="idEXTERN_32_4">
+            <g class="sld-wire sld-vl30to50-1" id="_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_F3_95_33KV_95_TWO_95_INTERNAL_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_F3_95_33KV_95_TWO_45_F3_95_33KV_95_TWO">
+                <polyline points="765.0,1475.0,765.0,1445.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-1" id="_95_VL3_95_33_95_INTERNAL_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_F3_95_33KV_95_TWO_45_F3_95_33KV_95_TWO_95_INTERNAL_95_VL3_95_33_95_F3_95_33KV_95_TWO">
+                <polyline points="765.0,1445.0,765.0,1365.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-1" id="_95_VL3_95_33_95_INTERNAL_95_VL3_95_33_95_F3_95_33KV_95_TWO_95_F3_95_33KV_95_TWO">
+                <polyline points="765.0,1365.0,765.0,1303.0"/>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-in" id="idF3_95_33KV_95_TWO_ARROW_ACTIVE" transform="translate(760.0,1318.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">-31 MW</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-out" id="idF3_95_33KV_95_TWO_ARROW_REACTIVE" transform="translate(760.0,1338.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">1 MVAR</text>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idF3_95_33KV_95_TWO_ARROW_CURRENT" transform="translate(760.0,1358.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">542</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl30to50-1" id="idBUSCO_95_B3_95_33_95_F3_95_33KV_95_TWO" transform="translate(761.0,1471.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-1" id="idINTERNAL_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_F3_95_33KV_95_TWO_45_F3_95_33KV_95_TWO" transform="translate(761.0,1441.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-1" id="idINTERNAL_95_VL3_95_33_95_F3_95_33KV_95_TWO" transform="translate(761.0,1361.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-top-feeder" id="idF3_95_33KV_95_TWO" transform="translate(765.0,1303.0)">
+                <text class="sld-label" id="F3_33KV_TWO_N_LABEL" text-anchor="middle" x="0.0" y="-5.0">Solar_Feeder_3_33kV_1.8km</text>
+            </g>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-bottom" id="idEXTERN_32_5">
+            <g class="sld-wire sld-vl30to50-1" id="_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_F4_95_33KV_95_TWO_95_INTERNAL_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_F4_95_33KV_95_TWO_45_F4_95_33KV_95_TWO">
+                <polyline points="815.0,1475.0,815.0,1505.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-1" id="_95_VL3_95_33_95_INTERNAL_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_F4_95_33KV_95_TWO_45_F4_95_33KV_95_TWO_95_INTERNAL_95_VL3_95_33_95_F4_95_33KV_95_TWO">
+                <polyline points="815.0,1505.0,815.0,1585.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-1" id="_95_VL3_95_33_95_INTERNAL_95_VL3_95_33_95_F4_95_33KV_95_TWO_95_F4_95_33KV_95_TWO">
+                <polyline points="815.0,1585.0,815.0,1647.0"/>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idF4_95_33KV_95_TWO_ARROW_CURRENT" transform="translate(810.0,1622.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">542</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-out" id="idF4_95_33KV_95_TWO_ARROW_REACTIVE" transform="translate(810.0,1602.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">1 MVAR</text>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-in" id="idF4_95_33KV_95_TWO_ARROW_ACTIVE" transform="translate(810.0,1582.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z" transform="rotate(180.0,5.0,5.0)"/>
+                <text class="sld-label" x="15.0" y="5.0">-31 MW</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl30to50-1" id="idBUSCO_95_B3_95_33_95_F4_95_33KV_95_TWO" transform="translate(811.0,1471.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-1" id="idINTERNAL_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_F4_95_33KV_95_TWO_45_F4_95_33KV_95_TWO" transform="translate(811.0,1501.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-1" id="idINTERNAL_95_VL3_95_33_95_F4_95_33KV_95_TWO" transform="translate(811.0,1581.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-bottom-feeder" id="idF4_95_33KV_95_TWO" transform="translate(815.0,1647.0)">
+                <text class="sld-label" id="F4_33KV_TWO_S_LABEL" text-anchor="middle" x="0.0" y="5.0">Solar_Feeder_4_33kV_1.8km</text>
+            </g>
+        </g>
+        <g class="sld-extern-cell sld-cell-direction-top" id="idEXTERN_32_6">
+            <g class="sld-wire sld-vl30to50-1" id="_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_F5_95_33KV_95_TWO_95_INTERNAL_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_F5_95_33KV_95_TWO_45_F5_95_33KV_95_TWO">
+                <polyline points="865.0,1475.0,865.0,1445.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-1" id="_95_VL3_95_33_95_INTERNAL_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_F5_95_33KV_95_TWO_45_F5_95_33KV_95_TWO_95_INTERNAL_95_VL3_95_33_95_F5_95_33KV_95_TWO">
+                <polyline points="865.0,1445.0,865.0,1365.0"/>
+            </g>
+            <g class="sld-wire sld-vl30to50-1" id="_95_VL3_95_33_95_INTERNAL_95_VL3_95_33_95_F5_95_33KV_95_TWO_95_F5_95_33KV_95_TWO">
+                <polyline points="865.0,1365.0,865.0,1303.0"/>
+            </g>
+            <g class="sld-active-power sld-feeder-info sld-in" id="idF5_95_33KV_95_TWO_ARROW_ACTIVE" transform="translate(860.0,1318.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">-31 MW</text>
+            </g>
+            <g class="sld-reactive-power sld-feeder-info sld-out" id="idF5_95_33KV_95_TWO_ARROW_REACTIVE" transform="translate(860.0,1338.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">1 MVAR</text>
+            </g>
+            <g class="sld-current sld-feeder-info sld-out" id="idF5_95_33KV_95_TWO_ARROW_CURRENT" transform="translate(860.0,1358.0)">
+                <path class="sld-arrow-out" d="M 9.95,9.64 C 9.67,10.1 0.257,10.1 0.01,9.64 -0.239,9.16 4.48,0 4.97,0 5.46,0 10.2,9.16 9.95,9.64 Z"/>
+                <path class="sld-arrow-in" d="m 0.01,0.345 c 0.28,-0.46 9.69,-0.46 9.94,0 C 10.2,0.825 5.48,9.99 4.99,9.99 4.5,9.99 -0.24,0.825 0.01,0.345 Z"/>
+                <text class="sld-label" x="15.0" y="5.0">542</text>
+            </g>
+            <g class="sld-bus-connection sld-fictitious sld-vl30to50-1" id="idBUSCO_95_B3_95_33_95_F5_95_33KV_95_TWO" transform="translate(861.0,1471.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-1" id="idINTERNAL_95_VL3_95_33_95_BUSCO_95_B3_95_33_95_F5_95_33KV_95_TWO_45_F5_95_33KV_95_TWO" transform="translate(861.0,1441.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-node sld-hidden-node sld-fictitious sld-vl30to50-1" id="idINTERNAL_95_VL3_95_33_95_F5_95_33KV_95_TWO" transform="translate(861.0,1361.0)">
+                <circle cx="4" cy="4" r="4"/>
+            </g>
+            <g class="sld-top-feeder" id="idF5_95_33KV_95_TWO" transform="translate(865.0,1303.0)">
+                <text class="sld-label" id="F5_33KV_TWO_N_LABEL" text-anchor="middle" x="0.0" y="-5.0">Solar_Feeder_5_33kV_1.8km</text>
+            </g>
+        </g>
+        <g class="sld-wire sld-vl30to50-1" id="idEDGE_95_TR1_95_A_95_ONE">
+            <polyline points="565.0,1303.0,565.0,1243.0,520.0,1243.0,520.0,1465.5"/>
+        </g>
+        <g class="sld-wire sld-vl120to180-1" id="idEDGE_95_TR1_95_A_95_TWO">
+            <polyline points="305.0,1647.0,305.0,1707.0,520.0,1707.0,520.0,1484.5"/>
+        </g>
+        <g class="sld-wire sld-vl30to50-1" id="idEDGE_95_TR1_95_B_95_ONE">
+            <polyline points="615.0,1647.0,615.0,1732.0,500.0,1732.0,500.0,1484.5"/>
+        </g>
+        <g class="sld-wire sld-vl120to180-1" id="idEDGE_95_TR1_95_B_95_TWO">
+            <polyline points="355.0,1303.0,355.0,1218.0,500.0,1218.0,500.0,1465.5"/>
+        </g>
+        <g class="sld-two-wt sld-fictitious" id="idTR1_95_A" transform="translate(514.0,1465.5)">
+            <path class="sld-vl30to50-1 sld-winding" d="M 11.41 10.43 A 7 7 0 0 1 0.59 10.43 A 6 6 0 1 0 11.41 10.43z" transform="rotate(180.0,6.0,9.5)"/>
+            <circle class="sld-vl120to180-1 sld-winding" cx="6" cy="6" r="6" transform="rotate(180.0,6.0,9.5)"/>
+        </g>
+        <g class="sld-two-wt sld-fictitious" id="idTR1_95_B" transform="translate(494.0,1465.5)">
+            <path class="sld-vl30to50-1 sld-winding" d="M 11.41 10.43 A 7 7 0 0 1 0.59 10.43 A 6 6 0 1 0 11.41 10.43z"/>
+            <circle class="sld-vl120to180-1 sld-winding" cx="6" cy="6" r="6"/>
+        </g>
+        <g class="sld-wire sld-vl120to180-1" id="idL1_95_H1">
+            <polyline points="225.0,514.0,225.0,514.0,225.0,574.0,110.0,574.0,110.0,1707.0,205.0,1707.0,205.0,1647.0,205.0,1647.0"/>
+        </g>
+        <g class="sld-wire sld-vl120to180-1" id="idL1_95_H2">
+            <polyline points="275.0,170.0,275.0,170.0,275.0,110.0,85.0,110.0,85.0,1243.0,255.0,1243.0,255.0,1303.0,255.0,1303.0"/>
+        </g>
+        <g class="sld-wire sld-vl30to50-1" id="idF1_95_33KV">
+            <polyline points="535.0,1068.0,535.0,1068.0,535.0,1128.0,890.0,1128.0,890.0,1243.0,665.0,1243.0,665.0,1303.0,665.0,1303.0"/>
+        </g>
+        <g class="sld-wire sld-vl30to50-1" id="idF2_95_33KV">
+            <polyline points="585.0,724.0,585.0,724.0,585.0,664.0,915.0,664.0,915.0,1707.0,715.0,1707.0,715.0,1647.0,715.0,1647.0"/>
+        </g>
+        <g class="sld-wire sld-vl30to50-1" id="idF3_95_33KV">
+            <polyline points="635.0,1068.0,635.0,1068.0,635.0,1128.0,890.0,1128.0,890.0,1243.0,765.0,1243.0,765.0,1303.0,765.0,1303.0"/>
+        </g>
+        <g class="sld-wire sld-vl30to50-1" id="idF4_95_33KV">
+            <polyline points="685.0,724.0,685.0,724.0,685.0,664.0,915.0,664.0,915.0,1707.0,815.0,1707.0,815.0,1647.0,815.0,1647.0"/>
+        </g>
+        <g class="sld-wire sld-vl30to50-1" id="idF5_95_33KV">
+            <polyline points="735.0,1068.0,735.0,1068.0,735.0,1128.0,890.0,1128.0,890.0,1243.0,865.0,1243.0,865.0,1303.0,865.0,1303.0"/>
+        </g>
+    </g>
+</svg>
